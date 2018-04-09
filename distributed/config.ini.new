@@ -1,0 +1,9 @@
+[irc-server]
+host = chat.freenode.net
+bot-name = bot-user
+bot-password = your bots password
+admin-name = yourname
+
+[irc-channels]
+channel1
+channel2
