@@ -1,34 +1,17 @@
-# IRC Bots
+# Botnet
 
-This is a different take on IRC Bots. This could be utilized for a bot net or something similar. It's not asynchronus like the Wifi(now|zone|here) botnet-style command push feature we developed back in '09 as it requires IRC connectivity, however it's enough for you to have a central place to accept commands, then push them out to the relevant nodes. 
+This is a little botnet project I've been brainstorming on for quite a while. The whole principal is to deploy little scripts across infrastructure to humanize my servers further by making them talk to me in IRC. As lonely as this sounds, there's a valid sysadminy reason for this.
 
-I haven't finished this and probably never will, but I guess it would be a good stub to get some fun things happening in the future. 
+Warning; this does not work yet.
 
-I've built this because I want to build a jarvis but haven't worked out how yet. One day... one day I'll learn some nlp.
+## Intended Usage
 
-# Intended Use
+The intent here is to create a simple server which sits on a remote machine, accepting input and delegating commands for bots scattered across the interwebs.
 
-You'll run your server. This badboy is responsible for processing commands.
-You'll run your client. These badboys are responsible for interacting with hoomans.
+These bots can do whatever they like, however the primary purpose is for the bot to accept data to transmit back to the server and then to relay the servers response back to the client. For instance, an IRC bot would communicate the IRC log back to the server and if an action get's triggered, the server would process the action then return the output back to the IRC bot to send to the channel.
 
-The server sits in the background, listening to an ip/port. The clients run where-ever you want, and they'll perform tasks such as: 
-- Sitting in an IRC chatroom
-- Sitting in a Hipchat rom
-- Posting to your Facebook
-- Interacting with your monitoring or CI
-- Anything else your mind imagines
-
-
-This stems from the idea that I would like to have my phone connected to a bot in a chat program. Let's use Hipchat as an example, even though I'm pretty sure it blocks this.
-
-I would be connected to my companies Hipchat room, with all my fellow coworkers. We sit in the chatroom all day instead of sitting in an office. Our bot sits in there with us, and whenever a key event happens that has our backs.
-
-You might work in a 24/7 support team, manned by a handful of engineers who run a rotating on-call roster to respond to out-of-hours emergencies. Whenever a server goes down, a website doesn't fully load, or whatever metrics you might monitor fails, your bot would be alerted to the issue and would post in your Support Chat in-kind. You could then say "Thanks Bot" to acknowledge the alert and silence it.
-
-Alternatively, your bot could create a ticket in salesforce and post the ticket into the chat along with the alert notification. You could then reply "thanks bot", and the bot would assign that ticket to your queue. You could then say "Let the customer know I'm looking into it and will call in five minutes." Your bot would then submit an entry into your ticket system, masquerading as yourself, saying "I'm looking into it and will call in five minutes", or could potentially pull the customers mobile phone numbers from your CRM (remember your customers received the same alert via sms/email), then SMS them through an sms gateway.
-
-The possibilities are endless with your automation. You could say "Hey bot! Run jenkins job build-project" then "Hey bot! Run jenkins job test-project", and the bot would do so in kind, later replying "Hey <user>! Job failed, here's the build link: <link>".
-
-Bots are highly disregarded in business because we don't run our businesses properly. We still insist on people doing certain tasks manually, or it might be easier to do it manually because noone cared to properly build your systems.
-
-No matter your inspiration, I hope this at least inspires you to do something with irc-bot. Even if it's to centralize your messaging programs in a hacky kind of way.
+Some use cases I've thought of include
+- IRC bot for a chat channel
+- A Hipchat bot that responds relays your alerts to your team (remember pagers?)
+- An interactive Facebook Messenger bot that auto-replies to your customers, masquerading as a real person, that you're able to speak through when neccersary
+- Modify the server to take ansible commands and deploy it on your ansible server. Modify the bot/server to accept a range of commands that will utilize Ansible to execute commands on your remote linux systems on your behalf. Write a bunch of scripts that basically automate your job. Fake an injury and begin "working from home" during your recovery phase, preferably on a beach somewhere. Have the bot look for keywords in emails and execute the apporpriate script in response. Anything that doesn't trigger, have a bot sitting in hipchat so you can just tell it what to do. Now that you have more free time, you can spend your afternoons on more productive pursuits, like training to scull a longneck in a single go or balancing carburetors my ear.
